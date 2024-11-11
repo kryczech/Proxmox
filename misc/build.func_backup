@@ -145,12 +145,12 @@ echo_default() {
   echo -e "${DGN}Using Apt-Cacher IP Address: ${BGN}Default${CL}"
   echo -e "${DGN}Disable IPv6: ${BGN}No${CL}"
   echo -e "${DGN}Using Interface MTU Size: ${BGN}Default${CL}"
-  echo -e "${DGN}Using DNS Search Domain: ${BGN}$SD${CL}"
-  echo -e "${DGN}Using DNS Server Address: ${BGN}$NX${CL}"
+  echo -e "${DGN}Using DNS Search Domain: ${BGN}Host${CL}"
+  echo -e "${DGN}Using DNS Server Address: ${BGN}Host${CL}"
   echo -e "${DGN}Using MAC Address: ${BGN}Default${CL}"
   echo -e "${DGN}Using VLAN Tag: ${BGN}Default${CL}"
   echo -e "${DGN}Enable Root SSH Access: ${BGN}No${CL}"
-  echo -e "${DGN}Enable Verbose Mode: ${BGN}$VERBOSE${CL}"
+  echo -e "${DGN}Enable Verbose Mode: ${BGN}No${CL}"
   echo -e "${BL}Creating a ${APP} LXC using the above default settings${CL}"
 }
 

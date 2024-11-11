@@ -50,8 +50,8 @@ function default_settings() {
   MAC=""
   VLAN=""
   SSH="no"
-  VERB="no"
-  VERBOSE="no"
+  VERB="yes"
+  VERBOSE="yes"
   echo_default
 }
 

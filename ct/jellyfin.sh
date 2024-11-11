@@ -44,14 +44,14 @@ function default_settings() {
   APT_CACHER_IP=""
   DISABLEIP6="no"
   MTU=""
-  SD=""
+  SD="kryczech.net"
   NS="192.168.1.10"
   NX="192.168.1.10"
   MAC=""
   VLAN=""
   SSH="no"
   VERB="yes"
-  VERBOSE="yes"
+  #VERBOSE="yes"
   echo_default
 }
 

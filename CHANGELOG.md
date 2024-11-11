@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img src="https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/logo.png" height="100px" />
+    <img src="https://raw.githubusercontent.com/kryczech/Proxmox/main/misc/images/logo.png" height="100px" />
  </a>
 </div>
 <h1 align="center">Changelog</h1>
@@ -2274,28 +2274,28 @@ All LXC instances created using this repository come pre-installed with Midnight
 ### Changed
 
 - **Node-Red LXC**
-  - Add Install [Themes Script](https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/node-red-themes.png)
+  - Add Install [Themes Script](https://raw.githubusercontent.com/kryczech/Proxmox/main/misc/images/node-red-themes.png)
 
 ## 2022-02-16
 
 ### Changed
 
 - **Home Assistant Container LXC**
-  - Add Options to [Update Menu](https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/update-menu.png)
+  - Add Options to [Update Menu](https://raw.githubusercontent.com/kryczech/Proxmox/main/misc/images/update-menu.png)
 
 ## 2022-02-14
 
 ### Changed
 
 - **Home Assistant Container LXC**
-  - Add [Update Menu](https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/update-menu.png)
+  - Add [Update Menu](https://raw.githubusercontent.com/kryczech/Proxmox/main/misc/images/update-menu.png)
 
 ## 2022-02-13
 
 ### Changed
 
 - **Mariadb LXC**
-  - Add [Adminer](https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/adminer.png) (formerly phpMinAdmin), a full-featured database management tool
+  - Add [Adminer](https://raw.githubusercontent.com/kryczech/Proxmox/main/misc/images/adminer.png) (formerly phpMinAdmin), a full-featured database management tool
 
 ## 2022-02-12
 
@@ -2387,7 +2387,7 @@ All LXC instances created using this repository come pre-installed with Midnight
   - `va-driver-all` is preinstalled
   - now using Ubuntu 21.10
 - **misc**
-  - new GUI script [(Screenshot)](https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/pms-copy-data.png) to copy data from one Plex Media Server LXC to another Plex Media Server LXC 
+  - new GUI script [(Screenshot)](https://raw.githubusercontent.com/kryczech/Proxmox/main/misc/images/pms-copy-data.png) to copy data from one Plex Media Server LXC to another Plex Media Server LXC 
 
 
 ## Initial Catch up - 2022-01-23

@@ -32,8 +32,8 @@ read -p "Enter NordVPN token: " VPN_TOKEN
 echo "vpn token: $VPN_TOKEN"
 
 msg_info "Installing NordVPN"
-$STD wget -qnc https://repo.nordvpn.com/gpg/nordvpn_public.asc -O- | apt-key add -
-$STD echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" > /etc/apt/sources.list.d/nordvpn.list
+wget -qnc https://repo.nordvpn.com/gpg/nordvpn_public.asc -O- | apt-key add -
+echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" > /etc/apt/sources.list.d/nordvpn.list
 $STD apt-get update
 $STD apt-get install -y nordvpn
 nordvpn login --token $VPN_TOKEN

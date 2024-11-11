@@ -24,7 +24,7 @@ mkdir -p /media/television
 chmod -R 755 /media
 echo "192.168.1.10:/volume1/Movies /media/movies nfs defaults 0 0" >> /etc/fstab
 echo "192.168.1.10:/volume1/Television /media/television nfs defaults 0 0" >> /etc/fstab
-systemctl deamon-reload
+systemctl daemon-reload
 mount -a
 msg_ok "Installed Dependencies"
 

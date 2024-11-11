@@ -45,7 +45,7 @@ function default_settings() {
   DISABLEIP6="no"
   MTU=""
   SD=""
-  NS="192.168.1.10"
+  NS=""
   MAC=""
   VLAN=""
   SSH="no"

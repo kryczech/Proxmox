@@ -53,6 +53,7 @@ function default_settings() {
   VERB="yes"
   VERBOSE="no"
   echo_default
+  # comment
 }
 
 function update_script() {

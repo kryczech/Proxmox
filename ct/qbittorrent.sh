@@ -65,6 +65,9 @@ msg_ok "Updated ${APP} LXC"
 exit
 }
 
+read -p "Enter NordVPN token: " VPN_TOKEN
+export $VPN_TOKEN
+
 start
 build_container
 description

@@ -17,15 +17,21 @@ msg_info "Installing Dependencies"
 $STD apt-get install -y curl
 $STD apt-get install -y sudo
 $STD apt-get install -y mc
-$STD apt-get install nfs-common
+$STD apt-get install -y nfs-common
+$STD apt-get install -y gnupg gnupg1 gnupg2
 msg_ok "Installed Dependencies"
+
+echo "vpn token: $VPN_TOKEN"
 
 msg_info "Installing qbittorrent-nox"
 $STD apt-get install -y qbittorrent-nox
 mkdir -p /.config/qBittorrent/
 cat <<EOF >/.config/qBittorrent/qBittorrent.conf
+[BitTorrent]
+Session\Interface=nordlynx
+Session\InterfaceName=nordlynx
+
 [Preferences]
-WebUI\Password_PBKDF2="@ByteArray(amjeuVrF3xRbgzqWQmes5A==:XK3/Ra9jUmqUc4RwzCtrhrkQIcYczBl90DJw2rT8DFVTss4nxpoRhvyxhCf87ahVE3SzD8K9lyPdpyUCfmVsUg==)"
 WebUI\Port=8090
 WebUI\UseUPnP=false
 WebUI\Username=admin

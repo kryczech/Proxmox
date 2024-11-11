@@ -46,6 +46,7 @@ function default_settings() {
   MTU=""
   SD=""
   NS="192.168.1.10"
+  NX="192.168.1.10"
   MAC=""
   VLAN=""
   SSH="no"

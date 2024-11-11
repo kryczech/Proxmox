@@ -28,6 +28,13 @@ if [[ "$CTTYPE" == "0" ]]; then
   chmod 660 /dev/dri/*
   $STD adduser $(id -u -n) video
   $STD adduser $(id -u -n) render
+  $STD apt-get install -i nfs-common
+  mkdir -p /media/movies
+  mkdir -p /media/television
+  chmod -R 755 /media
+  echo "192.168.1.10:/volume1/Movies /media/movies nfs defaults 0 0" | sudo tee -a /etc/fstab
+  echo "192.168.1.10:/volume1/Television /media/television nfs defaults 0 0" | sudo tee -a /etc/fstab
+  mount -a
 fi
 msg_ok "Set Up Hardware Acceleration"
 

@@ -31,11 +31,9 @@ if [[ "$CTTYPE" == "0" ]]; then
   $STD apt-get install -y nfs-common
   mkdir -p /media/movies
   mkdir -p /media/television
-  #mkdir -p /var/lib/jellyfin
   chmod -R 755 /media
   echo "192.168.1.10:/volume1/Movies /media/movies nfs defaults 0 0" >> /etc/fstab
   echo "192.168.1.10:/volume1/Television /media/television nfs defaults 0 0" >> /etc/fstab
-  #echo "192.168.1.10:/volume1/jellyfin_data /var/lib/jellyfin nfs defaults 0 0" >> /etc/fstab
   mount -a
 fi
 msg_ok "Set Up Hardware Acceleration"
@@ -61,7 +59,6 @@ EOF
 $STD apt-get update
 $STD apt-get install -y jellyfin
 chown -R jellyfin:adm /etc/jellyfin
-#chown -R jellyfin:adm /var/lib/jellyfin
 sleep 10
 systemctl restart jellyfin
 if [[ "$CTTYPE" == "0" ]]; then

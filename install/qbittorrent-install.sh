@@ -24,6 +24,18 @@ msg_ok "Installed Dependencies"
 read -p "Enter NordVPN token: " VPN_TOKEN
 echo "vpn token: $VPN_TOKEN"
 
+msg_info "Installing NordVPN"
+wget -qnc https://repo.nordvpn.com/gpg/nordvpn_public.asc -O- | apt-key add -
+echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" > /etc/apt/sources.list.d/nordvpn.list
+apt-get update
+apt-get install -y nordvpn
+nordvpn set lan-discovery on
+nordvpn set autoconnect on
+nordvpn set killswitch on
+nordvpn login --token $VPN_TOKEN
+nordvpn connect
+msg_ok "Installed NordVPN"
+
 msg_info "Installing qbittorrent-nox"
 $STD apt-get install -y qbittorrent-nox
 mkdir -p /.config/qBittorrent/

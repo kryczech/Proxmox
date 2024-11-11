@@ -30,7 +30,7 @@ color
 catch_errors
 
 function default_settings() {
-  CT_TYPE="1"
+  CT_TYPE="0"
   PW=""
   CT_ID=$NEXTID
   HN=$NSAPP
@@ -38,18 +38,20 @@ function default_settings() {
   CORE_COUNT="$var_cpu"
   RAM_SIZE="$var_ram"
   BRG="vmbr0"
-  NET="dhcp"
-  GATE=""
+  NET="192.168.1.26/24"
+  GATE="192.168.1.1"
   APT_CACHER=""
   APT_CACHER_IP=""
   DISABLEIP6="no"
   MTU=""
-  SD=""
-  NS=""
+  SD="kryczech.net"
+  NS="192.168.1.10"
+  NX="192.168.1.10"
   MAC=""
   VLAN=""
   SSH="no"
   VERB="no"
+  VERBOSE="no"
   echo_default
 }
 

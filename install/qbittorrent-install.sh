@@ -24,12 +24,14 @@ mkdir -p /media/television
 chmod -R 755 /media
 echo "192.168.1.10:/volume1/Movies /media/movies nfs defaults 0 0" >> /etc/fstab
 echo "192.168.1.10:/volume1/Television /media/television nfs defaults 0 0" >> /etc/fstab
+systemctl deamon-reload
 mount -a
 msg_ok "Installed Dependencies"
 
-msg_info "Installing NordVPN"
 read -p "Enter NordVPN token: " VPN_TOKEN
 echo "vpn token: $VPN_TOKEN"
+
+msg_info "Installing NordVPN"
 $STD wget -qnc https://repo.nordvpn.com/gpg/nordvpn_public.asc -O- | apt-key add -
 $STD echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" > /etc/apt/sources.list.d/nordvpn.list
 $STD apt-get update

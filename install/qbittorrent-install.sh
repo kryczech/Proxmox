@@ -21,6 +21,7 @@ $STD apt-get install -y nfs-common
 $STD apt-get install -y gnupg gnupg1 gnupg2
 msg_ok "Installed Dependencies"
 
+read -p "Enter NordVPN token: " VPN_TOKEN
 echo "vpn token: $VPN_TOKEN"
 
 msg_info "Installing qbittorrent-nox"

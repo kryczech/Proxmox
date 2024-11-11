@@ -140,13 +140,13 @@ echo_default() {
   echo -e "${DGN}Allocated Cores ${BGN}$var_cpu${CL}"
   echo -e "${DGN}Allocated Ram ${BGN}$var_ram${CL}"
   echo -e "${DGN}Using Bridge: ${BGN}vmbr0${CL}"
-  echo -e "${DGN}Using Static IP Address: ${BGN}net${CL}"
-  echo -e "${DGN}Using Gateway IP Address: ${BGN}gate${CL}"
+  echo -e "${DGN}Using Static IP Address: ${BGN}dhcp${CL}"
+  echo -e "${DGN}Using Gateway IP Address: ${BGN}Default${CL}"
   echo -e "${DGN}Using Apt-Cacher IP Address: ${BGN}Default${CL}"
   echo -e "${DGN}Disable IPv6: ${BGN}No${CL}"
   echo -e "${DGN}Using Interface MTU Size: ${BGN}Default${CL}"
   echo -e "${DGN}Using DNS Search Domain: ${BGN}Host${CL}"
-  echo -e "${DGN}Using DNS Server Address: ${BGN}ns${CL}"
+  echo -e "${DGN}Using DNS Server Address: ${BGN}Host${CL}"
   echo -e "${DGN}Using MAC Address: ${BGN}Default${CL}"
   echo -e "${DGN}Using VLAN Tag: ${BGN}Default${CL}"
   echo -e "${DGN}Enable Root SSH Access: ${BGN}No${CL}"
@@ -412,19 +412,17 @@ advanced_settings() {
     exit-script
   fi
 
-  #if [ -z "${NS} ]; then
-    if NX=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a DNS Server IP (leave blank for HOST)" 8 58 --title "DNS SERVER IP" 3>&1 1>&2 2>&3); then
-      if [ -z $NX ]; then
-        NX=Host
-        NS=""
-      else
-        NS="-nameserver=$NX"
-      fi
-      echo -e "${DGN}Using DNS Server IP Address: ${BGN}$NX${CL}"
+  if NX=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a DNS Server IP (leave blank for HOST)" 8 58 --title "DNS SERVER IP" 3>&1 1>&2 2>&3); then
+    if [ -z $NX ]; then
+      NX=Host
+      NS=""
     else
-      exit-script
+      NS="-nameserver=$NX"
     fi
-  #fi
+    echo -e "${DGN}Using DNS Server IP Address: ${BGN}$NX${CL}"
+  else
+    exit-script
+  fi
 
   if MAC1=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a MAC Address(leave blank for default)" 8 58 --title "MAC ADDRESS" 3>&1 1>&2 2>&3); then
     if [ -z $MAC1 ]; then

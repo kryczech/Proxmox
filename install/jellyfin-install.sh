@@ -18,13 +18,6 @@ $STD apt-get install -y curl
 $STD apt-get install -y sudo
 $STD apt-get install -y gpg
 $STD apt-get install -y mc
-$STD apt-get install -y nfs-common
-mkdir -p /media/movies
-mkdir -p /media/television
-chown -R 755 /media
-echo "192.168.1.10:/volume1/Movies /media/movies nfs defaults 0 0" | sudo tee -a /etc/fstab
-echo "192.168.1.10:/volume1/Television /media/television nfs defaults 0 0" | sudo tee -a /etc/fstab
-mount -a
 msg_ok "Installed Dependencies"
 
 msg_info "Setting Up Hardware Acceleration"

@@ -28,7 +28,7 @@ if [[ "$CTTYPE" == "0" ]]; then
   chmod 660 /dev/dri/*
   $STD adduser $(id -u -n) video
   $STD adduser $(id -u -n) render
-  $STD apt-get install -i nfs-common
+  $STD apt-get install -y nfs-common
   mkdir -p /media/movies
   mkdir -p /media/television
   chmod -R 755 /media

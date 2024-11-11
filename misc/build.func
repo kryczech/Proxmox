@@ -412,16 +412,18 @@ advanced_settings() {
     exit-script
   fi
 
-  if NX=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a DNS Server IP (leave blank for HOST)" 8 58 --title "DNS SERVER IP" 3>&1 1>&2 2>&3); then
-    if [ -z $NX ]; then
-      NX=Host
-      NS=""
+  if [ -z "${NS} ]; then
+    if NX=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a DNS Server IP (leave blank for HOST)" 8 58 --title "DNS SERVER IP" 3>&1 1>&2 2>&3); then
+      if [ -z $NX ]; then
+        NX=Host
+        NS=""
+      else
+        NS="-nameserver=$NX"
+      fi
+      echo -e "${DGN}Using DNS Server IP Address: ${BGN}$NX${CL}"
     else
-      NS="-nameserver=$NX"
+      exit-script
     fi
-    echo -e "${DGN}Using DNS Server IP Address: ${BGN}$NX${CL}"
-  else
-    exit-script
   fi
 
   if MAC1=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a MAC Address(leave blank for default)" 8 58 --title "MAC ADDRESS" 3>&1 1>&2 2>&3); then

@@ -50,10 +50,9 @@ function default_settings() {
   MAC=""
   VLAN=""
   SSH="no"
-  VERB="yes"
+  VERB="no"
   VERBOSE="no"
   echo_default
-  # comment
 }
 
 function update_script() {

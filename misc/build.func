@@ -560,7 +560,7 @@ build_container() {
     -hostname $HN
     -tags proxmox-helper-scripts
     $SD
-    $NS
+    -nameserver $NS
     -net0 name=eth0,bridge=$BRG$MAC,ip=$NET,gw=$GATE$VLAN$MTU
     -onboot 1
     -cores $CORE_COUNT

@@ -150,7 +150,7 @@ echo_default() {
   echo -e "${DGN}Using MAC Address: ${BGN}Default${CL}"
   echo -e "${DGN}Using VLAN Tag: ${BGN}Default${CL}"
   echo -e "${DGN}Enable Root SSH Access: ${BGN}No${CL}"
-  echo -e "${DGN}Enable Verbose Mode: ${BGN}who knows${CL}"
+  echo -e "${DGN}Enable Verbose Mode: ${BGN}$VERBOSE${CL}"
   echo -e "${BL}Creating a ${APP} LXC using the above default settings${CL}"
 }
 
@@ -559,7 +559,7 @@ build_container() {
     -features $FEATURES
     -hostname $HN
     -tags proxmox-helper-scripts
-    $SD
+    -searchdomain $SD
     -nameserver $NS
     -net0 name=eth0,bridge=$BRG$MAC,ip=$NET,gw=$GATE$VLAN$MTU
     -onboot 1

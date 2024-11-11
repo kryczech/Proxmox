@@ -51,7 +51,7 @@ function default_settings() {
   VLAN=""
   SSH="no"
   VERB="yes"
-  #VERBOSE="yes"
+  VERBOSE="no"
   echo_default
 }
 
